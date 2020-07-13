@@ -118,3 +118,39 @@ a:hover{
     font-size: 2rem;
     font-weight: bold;
 }
+
+/* SIDE BAR */
+
+.brand button {
+    font-size: 3rem;
+    padding: .5rem;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.sidebar{
+    position: fixed; /* We want it fixed on the top of the screen*/
+    transform: translateX(-30rem); /* we sent it to the top*/
+    width: 30rem;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+.sidebar.open{
+    transform: translateX(0); /* Show the sidebar to the user*/
+}
+
+.sidebar-close-button{
+    border-radius: 50%;
+    border: .1rem #000000 solid;
+    width: 3rem;
+    height: 3rem;
+    padding: .5rem;
+    font-size: 2rem;
+    padding-top: 0;
+    cursor: pointer;
+    position: absolute;
+    right: .5rem;
+    top: 1.5rem;
+}
