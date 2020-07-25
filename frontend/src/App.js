@@ -28,6 +28,7 @@ function App() {
         <div class="header-links">
           <a href="cart.html">Cart</a>
           <a href="signin.html">Sign In</a>
+          <h3>huehue</h3>
         </div>
       </header>
 
