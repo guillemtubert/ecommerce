@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import data from './data';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomeScreen from './Screens/HomeScreen';
 import ProductScreen from './Screens/ProductScreen'
 
@@ -17,24 +16,23 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div class="grid-container">
-      <header class="header">
-        <div class="brand">
+    <div className="grid-container">
+      <header className="header">
+        <div className="brand">
           <button onClick={openMenu}> 
               &#9776;
           </button>
-          <a href="index.html">Isal Knives</a>
+          <Link to="/">Isal Knives</Link>
         </div>
-        <div class="header-links">
+        <div className="header-links">
           <a href="cart.html">Cart</a>
           <a href="signin.html">Sign In</a>
-          <h3>huehue</h3>
         </div>
       </header>
 
-      <aside class="sidebar">
+      <aside className="sidebar">
         <h3>Shopping Categories</h3>
-        <button class="sidebar-close-button" onClick={closeMenu}>x</button>
+        <button className="sidebar-close-button" onClick={closeMenu}>x</button>
         <ul>
           <li>
               <a href="index.html">Pants</a>
@@ -44,29 +42,14 @@ function App() {
           </li>
         </ul>
       </aside>
-      <main class="main">
-        <div class="content">
-            <Route path="/products/:id" component={ProductScreen} />
+      <main className="main">
+        <div className="content">
+            <Route path="/product/:id" component={ProductScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
-            <ul class="products"> 
-             { 
-              data.products.map(product =>
-              <li>
-                  <div class="product">
-                      <img class="product-image" src={product.image} alt="product"/>
-                      <div class="product-name">
-                      <a href="product.html">{product.name}</a>
-                          </div>
-                      <div class="product-brand">{product.brand}</div>
-              <div class="product-price">{product.price}</div>
-              <div class="product-rating">{product.rating} Stars {product.numReviews}</div>
-                  </div>
-              </li>)
-             }              
-</ul>
+            
         </div>
       </main>
-        <footer class="footer">
+        <footer className="footer">
             All rights reserved. © GuillemTubert
         </footer>
     </div>
